@@ -5,7 +5,7 @@ import SideBar from './components/sidebar';
 
 function App() {
   return (
-    <div className="flex flex-row min-h-screen min-w-full">
+    <div className="absolute flex flex-row min-h-screen min-w-full">
       <ServerBar />
       <SideBar />
       <Home />
