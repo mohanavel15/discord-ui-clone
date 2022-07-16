@@ -11,6 +11,13 @@ export default function TopBar() {
         <BsPersonFill className='text-gray-400 text-xl' />
         <h3>Friends</h3>
       </div>
+      <div className='flex justify-evenly items-center w-96'>
+        <FriendTopBarButton title='Online' selected={true} isGreen={false} />
+        <FriendTopBarButton title='All' selected={false} isGreen={false} />
+        <FriendTopBarButton title='Pending' selected={false} isGreen={false} />
+        <FriendTopBarButton title='Blocked' selected={false} isGreen={false} />
+        <FriendTopBarButton title='Add Friend' selected={false} isGreen={true} />
+      </div>
       <div className='flex absolute w-28 h-8 justify-evenly items-center text-2xl right-2'>
         <ActionButtons tooltip='New Group DM'>
           <TbMessageShare />
@@ -32,5 +39,13 @@ function ActionButtons({ children, tooltip }: { children : React.ReactNode, tool
       {children}
       <span className='absolute top-10 right-2 bg-black p-2 text-xs font-bold scale-0 group-hover:scale-100'>{tooltip}</span>
     </div>
+  )
+}
+
+function FriendTopBarButton({ title, selected, isGreen }: { title : string, selected : boolean, isGreen: boolean }) {
+  return (
+    <button className={`px-2 rounded ${ (selected && !isGreen) ? 'bg-gray-500 text-white' : 'hover:bg-gray-500 text-gray-300' } ${ isGreen ? 'bg-green-600 text-gray-200' : '' }`}>
+      { title }
+    </button>
   )
 }

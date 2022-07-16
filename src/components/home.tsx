@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className='flex flex-col min-h-full w-full bg-gray-600'>
         <TopBar />
-        <div className='flex h-full w-full'>
+        <div className='flex flex-grow w-full'>
             <Friends />
             <Activity />
         </div>
