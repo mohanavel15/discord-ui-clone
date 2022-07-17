@@ -3,7 +3,7 @@ import { MdMic, MdHeadset, MdSettings } from 'react-icons/md'
 import { FaRegUserCircle } from 'react-icons/fa'
 export default function Profile() {
   return (
-    <div className='fixed bottom-0 w-60 h-14 bg-gray-800 flex items-center'>
+    <div className='w-60 h-14 bg-gray-800 flex items-center'>
       <div className='flex h-10 w-28 m-1 hover:bg-gray-500 hover:cursor-pointer rounded-md items-center justify-start'>
         <FaRegUserCircle className='text-4xl text-white' />
         <div className='flex flex-col justify-evenly m-2'>

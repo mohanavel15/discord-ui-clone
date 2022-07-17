@@ -1,15 +1,14 @@
-import React from 'react';
-import Home from './components/home';
-import ServerBar from './components/serverbar';
-import SideBar from './components/sidebar';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Channels from "./pages/channels";
 
 function App() {
   return (
-    <div className="absolute flex flex-row min-h-screen min-w-full">
-      <ServerBar />
-      <SideBar />
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/channels/:id" element={<Channels />} />
+        <Route path="*" element={<Navigate to="/channels/@me" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
