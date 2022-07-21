@@ -1,14 +1,16 @@
 import React from 'react'
 import { MdMic, MdHeadset, MdSettings } from 'react-icons/md'
 import { FaRegUserCircle } from 'react-icons/fa'
+import { currentUser } from '../../data'
+
 export default function Profile() {
   return (
     <div className='w-60 h-14 bg-gray-800 flex items-center'>
       <div className='flex h-10 w-28 m-1 hover:bg-gray-500 hover:cursor-pointer rounded-md items-center justify-start'>
         <FaRegUserCircle className='text-4xl text-white' />
         <div className='flex flex-col justify-evenly m-2'>
-          <p className='text-sm font-bold text-white'>User</p>
-          <p className='text-xs text-gray-400'>#0000</p>
+          <p className='text-sm font-bold text-white'>{ currentUser.name }</p>
+          <p className='text-xs text-gray-400'>#{ currentUser.discriminator }</p>
         </div>
       </div>
       <div className='flex h-10 w-28 justify-end items-center'>
