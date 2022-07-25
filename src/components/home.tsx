@@ -5,7 +5,7 @@ import TopBar from './home/topbar'
 
 export default function Home() {
   return (
-    <div className='flex flex-col min-h-full w-full bg-gray-600'>
+    <div className='flex flex-col flex-grow min-h-full bg-gray-600'>
         <TopBar />
         <div className='flex flex-grow w-full'>
             <Friends />

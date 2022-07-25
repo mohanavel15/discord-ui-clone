@@ -8,7 +8,7 @@ export default function TopBar() {
   const [selected, setSelected] = useState(0);
 
   return (
-    <div className='flex h-12 border-b-2 border-black items-center'>
+    <div className='flex h-12 border-b-2 border-gray-900 items-center'>
       <div className='flex border-r-2 border-gray-500 w-32 justify-evenly items-center text-lg font-bold text-white'>
         <BsPersonFill className='text-gray-400 text-xl' />
         <h3>Friends</h3>
