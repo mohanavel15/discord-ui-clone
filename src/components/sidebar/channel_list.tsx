@@ -22,7 +22,7 @@ export default function ChannelList() {
   }, [])
 
   return (
-    <div className='flex flex-grow flex-col overflow-y-scroll items-center'>
+    <div className='flex flex-grow flex-col overflow-y-hidden items-center'>
       <div className='w-full flex flex-col items-center justify-center'>
         <ActionButtons title='Friends' onClick={() => navigate('/channels/@me')}>
           <BsPersonFill />

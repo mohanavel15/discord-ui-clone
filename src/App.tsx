@@ -11,7 +11,7 @@ function App() {
           <Route path="@me" element={<Home />} />
           <Route path="@me/:id" element={<Chat />} />
         </Route>
-        <Route path="*" element={/*<Navigate to="/channels/@me" replace />*/<></>} />
+        <Route path="*" element={<Navigate to="/channels/@me" replace />} />
       </Routes>
     </Router>
   );

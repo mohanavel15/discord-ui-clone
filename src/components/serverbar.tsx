@@ -5,7 +5,7 @@ import { AiOutlinePlus, AiFillCompass, AiOutlineDownload, AiFillHome } from 'rea
 export default function ServerBar() {
   const navigate = useNavigate()
   return (
-    <div className='w-20 min-h-full bg-gray-900 flex flex-col items-center overflow-y-scroll'>
+    <div className='w-20 min-h-full bg-gray-900 flex flex-col items-center overflow-y-hidden'>
       <ServerIcon tooltip='Home' onClick={() => navigate('/channels/@me')}>
         <AiFillHome />
       </ServerIcon>
