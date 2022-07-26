@@ -1,5 +1,3 @@
-import React from 'react'
-import Home from '../components/home'
 import ServerBar from '../components/serverbar'
 import SideBar from '../components/sidebar'
 import { Outlet } from 'react-router-dom'
