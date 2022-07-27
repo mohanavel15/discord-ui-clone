@@ -18,7 +18,6 @@ export default function ChannelList() {
         </div>
     ])
     )
-    console.log(channels_)
   }, [])
 
   return (

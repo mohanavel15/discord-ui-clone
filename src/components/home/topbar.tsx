@@ -20,7 +20,7 @@ export default function TopBar() {
         <FriendTopBarButton id={3} title='Blocked'    selected={selected} onClick={setSelected} isGreen={false} />
         <FriendTopBarButton id={4} title='Add Friend' selected={selected} onClick={setSelected} isGreen={true} />
       </div>
-      <div className='flex absolute w-28 h-8 justify-evenly items-center text-2xl right-2'>
+      <div className='flex absolute w-auto h-8 justify-evenly items-center text-2xl right-2'>
         <ActionButtons tooltip='New Group DM'>
           <TbMessageShare />
         </ActionButtons>
@@ -37,9 +37,9 @@ export default function TopBar() {
 
 function ActionButtons({ children, tooltip }: { children : React.ReactNode, tooltip: string }) {
   return (
-    <div className='text-gray-200 hover:text-white hover:cursor-pointer group'>
+    <div className='relative text-gray-200 hover:text-white hover:cursor-pointer group mx-3'>
       {children}
-      <span className='absolute top-10 right-2 bg-black p-2 text-xs font-bold scale-0 group-hover:scale-100'>{tooltip}</span>
+      <span className='absolute top-10 min-w-fit bg-black p-2 text-xs font-bold scale-0 group-hover:scale-100'>{tooltip}</span>
     </div>
   )
 }
