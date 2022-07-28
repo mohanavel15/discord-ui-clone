@@ -6,7 +6,7 @@ import { BsPersonPlusFill, BsPinAngleFill, BsFillCameraVideoFill, BsFillTelephon
 import { CgInbox } from 'react-icons/cg'
 import { MdHelp, MdPeopleAlt, MdSearch } from 'react-icons/md'
 
-export default function TopBar({ channel }:{ channel: Channel }) {
+export default function TopBar({ channel, setShowMembers }:{ channel: Channel, setShowMembers: React.Dispatch<React.SetStateAction<boolean>> }) {
   return (
     <div className='flex h-12 border-b-2 border-gray-900 items-center'>
         <span className='flex mx-4 font-bold text-2xl text-gray-300 items-center'>
@@ -31,7 +31,7 @@ export default function TopBar({ channel }:{ channel: Channel }) {
           <BsPersonPlusFill />
         </ActionButtons>
         { channel.type === 2 && 
-          <ActionButtons tooltip='Toggle Member List'>
+          <ActionButtons tooltip='Toggle Member List' onClick={() => setShowMembers(p => !p)}>
             <MdPeopleAlt />
           </ActionButtons>
         }
@@ -50,9 +50,9 @@ export default function TopBar({ channel }:{ channel: Channel }) {
   )
 }
 
-function ActionButtons({ children, tooltip }: { children : React.ReactNode, tooltip: string }) {
+function ActionButtons({ children, tooltip, onClick }: { children : React.ReactNode, tooltip: string, onClick?: () => void }) {
   return (
-    <div className='relative text-gray-300 hover:text-white hover:cursor-pointer group mx-3'>
+    <div className='relative text-gray-300 hover:text-white hover:cursor-pointer group mx-3' onClick={onClick}>
       {children}
       <span className='absolute top-10 bg-black min-w-fit p-2 text-xs font-bold scale-0 group-hover:scale-100'>{tooltip}</span>
     </div>
