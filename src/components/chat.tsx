@@ -21,11 +21,7 @@ export default function Chat() {
         setChannel(channel_)
       }
     })
-
-    if (channel === undefined) {
-      navigate("/channels/@me")
-    }
-  }, [channel_id])
+  }, [channel_id, navigate])
 
   return (
     <div className='flex flex-col flex-grow bg-gray-600'>

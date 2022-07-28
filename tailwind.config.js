@@ -19,5 +19,4 @@ module.exports = {
   },
   plugins: [],
   mode: 'jit',
-  darkMode: false,
 }

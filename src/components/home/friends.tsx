@@ -31,7 +31,10 @@ function Friend({ user }:{ user: User}) {
   return (
     <div className='flex items-center w-full h-14 border-t-2 border-gray-500 hover:bg-gray-500 hover:cursor-pointer justify-between group'>
       <div className='h-full flex items-center'>
-        <img src={routes_.logo512} className='h-12 rounded-full mx-4'/>
+        <img src={user.avatar} alt="Avatar" 
+        className='h-12 rounded-full mx-4'
+        onError={(e) => {e.currentTarget.src = routes_.logo512}}
+        />
         <div className='flex flex-col'>
           <span className='font-bold text-gray-200 text-lg'>{ user.name }</span>
           <span className='text-gray-400 text-sm'>Offline</span>

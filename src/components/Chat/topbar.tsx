@@ -10,7 +10,8 @@ export default function TopBar({ channel }:{ channel: Channel }) {
   return (
     <div className='flex h-12 border-b-2 border-gray-900 items-center'>
         <span className='flex mx-4 font-bold text-2xl text-gray-300 items-center'>
-        <BiAt />
+        { channel.type === 1 && <BiAt /> }
+        { channel.type === 2 && <MdPeopleAlt /> }
         <span className='mx-2'>
         { channel.type === 2 && channel.name }
         { channel.type === 1 && channel.recipients[0].name }
