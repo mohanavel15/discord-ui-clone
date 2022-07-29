@@ -5,6 +5,7 @@ import TopBar from './Chat/topbar'
 import { channels } from '../data'
 import { useNavigate } from 'react-router-dom'
 import MemberBar from '../components/Chat/member_bar'
+import ChatBox from './Chat/chat_box'
 
 export default function Chat() {
   const parameter  = useParams<string>();
@@ -30,8 +31,7 @@ export default function Chat() {
     <div className='flex flex-col flex-grow bg-gray-600'>
         <TopBar channel={ channel } setShowMembers={ setShowMembers } />
         <div className='flex flex-grow'>
-          <div className='flex-grow'>
-          </div>
+          <ChatBox channel_id={channel.id} />
           { showMembers && channel.type === 2 && <MemberBar channel={ channel } /> }
         </div>
     </div>
