@@ -4,19 +4,10 @@ import { User } from '../../models/user'
 import { routes_ } from '../../routes'
 
 export default function MemberBar({ channel }:{ channel : Channel }) {
-    const members = useMemo(() => {
-        const members_list: JSX.Element[] = []
-
-        channel.recipients.forEach((user) => {
-            members_list.push(<Member user={user} />)
-        })
-
-        return members_list
-    }, [channel])
     return (
         <div className='flex flex-col bg-gray-700 h-full w-1/6 self-end'>
-            <span className='font-bold text-gray-400 text-sm mx-6 my-2'>MEMBERS—{members.length}</span>
-            {members}
+            <span className='font-bold text-gray-400 text-sm mx-6 my-2'>MEMBERS—{channel.recipients.length}</span>
+            {channel.recipients.map(user => (<Member user={user} />))}
         </div>
     )
 }

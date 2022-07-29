@@ -1,4 +1,5 @@
 import { Channel } from "./models/channel";
+import { Message } from "./models/message";
 import { User } from "./models/user";
 
 const users: User[] = [
@@ -21,6 +22,8 @@ const users: User[] = [
         avatar: ""
     }
 ]
+
+const currentUser: User = users[0];
 
 const channels: Channel[] = [
     {
@@ -49,6 +52,62 @@ const channels: Channel[] = [
     }
 ]
 
-const currentUser: User = users[0];
-
-export { currentUser, users, channels };
+const messages: Message[] = [
+    {
+        id: "1",
+        content: "Hello",
+        author: users[0],
+        channel_id: "4db5167b-a661-4f3f-83e2-b9e85319339d",
+        created_at: Date.now() - 1000,
+        edited_at: Date.now() - 1000,
+    },
+    {
+        id: "2",
+        content: "Hi",
+        author: users[1],
+        channel_id: "4db5167b-a661-4f3f-83e2-b9e85319339d",
+        created_at: Date.now() - 900,
+        edited_at: Date.now() - 900,
+    },
+    {
+        id: "3",
+        content: "Hello",
+        author: users[0],
+        channel_id: "8a54e4bc-5f0b-4edf-b63a-5065d61b7d60",
+        created_at: Date.now() - 1000,
+        edited_at: Date.now() - 1000,
+    },
+    {
+        id: "4",
+        content: "Hi",
+        author: users[2],
+        channel_id: "8a54e4bc-5f0b-4edf-b63a-5065d61b7d60",
+        created_at: Date.now() - 900,
+        edited_at: Date.now() - 900,
+    },
+    {
+        id: "5",
+        content: "Hello",
+        author: users[0],
+        channel_id: "53700885-51de-40dd-8e59-7e0fd343ce53",
+        created_at: Date.now() - 1000,
+        edited_at: Date.now() - 1000,
+    },
+    {
+        id: "6",
+        content: "Hi",
+        author: users[1],
+        channel_id: "53700885-51de-40dd-8e59-7e0fd343ce53",
+        created_at: Date.now() - 900,
+        edited_at: Date.now() - 900,
+    },
+    {
+        id: "7",
+        content: "Hey",
+        author: users[2],
+        channel_id: "53700885-51de-40dd-8e59-7e0fd343ce53",
+        created_at: Date.now() - 800,
+        edited_at: Date.now() - 800,
+    },
+]
+export { currentUser, users, channels, messages };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { channels } from '../../data'
 import Channel from './channel_list/channel'
 import { BsPlusLg, BsPersonFill } from 'react-icons/bs'
@@ -6,19 +6,7 @@ import { FaWind } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 
 export default function ChannelList() {
-  const [channels_, setChannels_] = useState<JSX.Element[]>([])
   const navigate = useNavigate()
-
-  useEffect(() => {
-    setChannels_([])
-    channels.forEach(channel =>
-      setChannels_(pc => [...pc,
-        <div key={channel.id} className='w-11/12 my-1'>
-          <Channel channel={channel} />
-        </div>
-    ])
-    )
-  }, [])
 
   return (
     <div className='flex flex-grow flex-col overflow-y-hidden items-center'>
@@ -34,7 +22,7 @@ export default function ChannelList() {
         <span>DIRECT MESSAGES</span>
         <BsPlusLg />
       </div>
-      {channels_}
+      {channels.map(channel => (<div key={channel.id} className='w-11/12 my-1'><Channel channel={channel} /></div>))}
     </div>
   )
 }
